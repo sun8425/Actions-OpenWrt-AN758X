@@ -487,12 +487,6 @@ jobs:
         name: an7581-${{ inputs.device }}-build-log
         path: openwrt/build.log
         if-no-files-found: ignore
-        
-    - name: Extract bl2-ram.bin
-      if: env.STATUS == 'success'
-      run: |
-        ls -lh build_dir/target-aarch64_cortex-a53_musl/immortalwrt-trusted-firmware-a/
-        cp build_dir/target-aarch64_cortex-a53_musl/immortalwrt-trusted-firmware-a/bl2-ram.bin bin/targets/airoha/an7581/
     
     - name: 整理固件
       if: env.STATUS == 'success'
