@@ -525,6 +525,8 @@ jobs:
     # 仅在手动勾选 ssh 时进入；tmate 会一直挂起到 job 超时（350 分钟），
     # 连上后请手动 Cancel workflow 释放 runner
     - name: SSH 调试（tmate）
-      uses: mxschmitt/action-tmate@v3
+      uses: Warpbuilds/action-debugger@v1.3
+      with:
+        limit-access-to-actor: true
       if: inputs.ssh
       timeout-minutes: 30
